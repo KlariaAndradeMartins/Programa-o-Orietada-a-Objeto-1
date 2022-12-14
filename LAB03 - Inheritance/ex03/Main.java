@@ -1,8 +1,7 @@
 public class Main {
+    public static void main(String[] args) {
+        Figurinhas_extras j1 = new Figurinhas_extras("Legend", "Rokie");
 
-    Figurinhas C1 = new Figurinhas("Neymar", "07/03/2022", 1.72, 52.0, "Atacante","Brasil", "Brasil" );
-    Figurinhas_Extras C2 = new Figurinhas_Extras(32, "Rua jose");
-
-    C2.MostrarFigurinhas();
-
+        j1.MostrarFigurinhas();
+    }
 }

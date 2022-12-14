@@ -1,78 +1,71 @@
 public class Figurinhas {
-    protected String nomeJogador;
-    protected String datanascimento;
-    protected double altura;
-    protected double peso;
-    protected String posição;
-    protected String pais;
-    protected String time;
+    private String NomedoJogador, DatadeNascimento;
+    private double Altura, Peso;
+    private String Posição, País;
 
-//    public Figurinhas(){
-//
-//    }
-    public Figurinhas(String nomeJogador, String datanascimento, double altura, double peso, String posição, String pais, String time) {
-        this.nomeJogador = nomeJogador;
-        this.datanascimento = datanascimento;
-        this.altura = altura;
-        this.peso = peso;
-        this.posição = posição;
-        this.pais = pais;
-        this.time = time;
+    public Figurinhas(String nomedoJogador, String datadeNascimento, double altura, double peso, String posição, String país) {
+        NomedoJogador = nomedoJogador;
+        DatadeNascimento = datadeNascimento;
+        Altura = altura;
+        Peso = peso;
+        Posição = posição;
+        País = país;
     }
 
-    public String getNomeJogador() {
-        return nomeJogador;
+    public String getNomedoJogador() {
+        return NomedoJogador;
     }
 
-    public void setNomeJogador(String nomeJogador) {
-        this.nomeJogador = nomeJogador;
+    public void setNomedoJogador(String nomedoJogador) {
+        NomedoJogador = nomedoJogador;
     }
 
-    public String getDatanascimento() {
-        return datanascimento;
+    public String getDatadeNascimento() {
+        return DatadeNascimento;
     }
 
-    public void setDatanascimento(String datanascimento) {
-        this.datanascimento = datanascimento;
+    public void setDatadeNascimento(String datadeNascimento) {
+        DatadeNascimento = datadeNascimento;
     }
 
     public double getAltura() {
-        return altura;
+        return Altura;
     }
 
     public void setAltura(double altura) {
-        this.altura = altura;
+        Altura = altura;
     }
 
     public double getPeso() {
-        return peso;
+        return Peso;
     }
 
     public void setPeso(double peso) {
-        this.peso = peso;
+        Peso = peso;
     }
 
     public String getPosição() {
-        return posição;
+        return Posição;
     }
 
     public void setPosição(String posição) {
-        this.posição = posição;
+        Posição = posição;
     }
 
-    public String getPais() {
-        return pais;
+    public String getPaís() {
+        return País;
     }
 
-    public void setPais(String pais) {
-        this.pais = pais;
+    public void setPaís(String país) {
+        País = país;
     }
 
-    public String getTime() {
-        return time;
-    }
-
-    public void setTime(String time) {
-        this.time = time;
+    public void MostrarFigurinhas(){
+        System.out.println("Nome: " + getNomedoJogador());
+        System.out.println("Data de Nascimento: " + getDatadeNascimento());
+        System.out.println("Altura: " + getAltura());
+        System.out.println("Peso: " + getPeso());
+        System.out.println("Posição " + getPosição());
+        System.out.println("Pais " + getPaís());
     }
 }
