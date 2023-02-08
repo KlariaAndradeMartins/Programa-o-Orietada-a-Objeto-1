@@ -2,8 +2,10 @@ public class SpeedBike extends Bike{
 
     private int espessuraPneu;
 
-    public SpeedBike (double velocidadeInicial, int marchaInicial, int espessuraPneu, String veiculo, String identificação, String fabricante, int marchaMaxima, String fabricanteMarcha){
-        super(marchaInicial, velocidadeInicial, veiculo, identificação,fabricante,marchaMaxima, fabricanteMarcha);
+    public SpeedBike (double velocidadeInicial, int espessuraPneu, String identificação, String fabricante,
+                      String fabricanteMarcha,
+                      int numeroMaximoMarchas){
+        super(velocidadeInicial, identificação, fabricante, fabricanteMarcha, numeroMaximoMarchas);
         this.espessuraPneu = espessuraPneu;
     }
 

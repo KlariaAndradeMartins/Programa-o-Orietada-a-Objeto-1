@@ -1,21 +1,20 @@
-public class Bike extends Marcha{
+public class Bike extends VeiculoDeDuasRodas {
+    protected Marcha marcha;
     protected double velocidade;
 
-    protected String veiculo;
-
-    protected String identificação;
-
-    protected String fabricante;
-
-    public Bike(int marchaInicial, double velocidadeInicial, String veiculo, String identificação,String fabricante, int marchaMaxima, String fabricanteMarcha) {
-        super(marchaInicial, marchaMaxima, fabricanteMarcha);
-        this.setMarchaAtual(marchaInicial);
-        this.setFabricanteMarcha(fabricanteMarcha);
-        this.setMarchaMaxima(marchaMaxima);
+    public Bike(double velocidadeInicial, String identificação, String fabricante, String fabricanteMarcha,
+                int numeroMaximoMarchas) {
+        super(identificação, fabricante);
+        this.marcha = new Marcha(fabricante, numeroMaximoMarchas);
         this.velocidade = velocidadeInicial;
-        this.veiculo = veiculo;
-        this.identificação = identificação;
-        this.fabricante = fabricante;
+    }
+
+    public void aumentaMarcha() {
+        this.marcha.aumentaMarcha();
+    }
+
+    public void diminuirMarcha() {
+        this.marcha.diminuiMarcha();
     }
 
     public void frear(int decremento){
@@ -27,6 +26,8 @@ public class Bike extends Marcha{
     }
 
     public void imprimirDados(){
-        System.out.println("\nO veiculo " + this.veiculo + " está na marcha " + this.getMarchaAtual() + " e com velocidade de " + this.velocidade + " Km/h" + ".Seu numero de identificação é " + this.identificação + " e o seu fabricante é " + this.fabricante);
+        super.imprimirDados();
+        System.out.println("Bike está na marcha " + this.marcha.getMarchaAtual() + " e com velocidade de " + this.velocidade + " Km/h");
     }
+
 }

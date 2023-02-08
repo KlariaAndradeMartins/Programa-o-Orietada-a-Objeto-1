@@ -1,54 +1,50 @@
 public class Marcha {
-    protected int marchaAtual;
-    protected int marchaMaxima;
-    protected String fabricanteMarcha;
 
-    public Marcha(int marchaMaxima, int maxima, String fabricanteMarcha) {
-        this.marchaMaxima = marchaMaxima;
-        this.fabricanteMarcha = fabricanteMarcha;
+    private String fabricante;
+    private int numeroMaximoMarchas;
+    private int marchaAtual;
+
+    public Marcha(String fabricante, int numeroMaximoMarchas) {
+        this.fabricante = fabricante;
+        this.numeroMaximoMarchas = numeroMaximoMarchas;
         this.marchaAtual = 1;
+    }
+
+    public String getFabricante() {
+        return fabricante;
+    }
+
+    public void setFabricante(String fabricante) {
+        this.fabricante = fabricante;
+    }
+
+    public int getNumeroMaximoMarchas() {
+        return numeroMaximoMarchas;
+    }
+
+    public void setNumeroMaximoMarchas(int numeroMaximoMarchas) {
+        this.numeroMaximoMarchas = numeroMaximoMarchas;
     }
 
     public int getMarchaAtual() {
         return marchaAtual;
     }
 
-    public void setMarchaAtual(int marchaAtual) {
-        this.marchaAtual = marchaAtual;
-    }
-
-    public int getMarchaMaxima() {
-        return marchaMaxima;
-    }
-
-    public void setMarchaMaxima(int marchaMaxima) {
-        this.marchaMaxima = marchaMaxima;
-    }
-
-    public String getFabricanteMarcha() {
-        return fabricanteMarcha;
-    }
-
-    public void setFabricanteMarcha(String fabricanteMarcha) {
-        this.fabricanteMarcha = fabricanteMarcha;
-    }
-
-    public void decrementar(int decremento){
-        if (getMarchaAtual() - decremento <0){
-            System.out.println("\nEssa velocidade e nula não e possivel decrementar!");
-        }
-        else{
-            setMarchaAtual(getMarchaAtual() - decremento);
-        }
-    }
-
-    public void aumentarMacha(int aumentar){
-        if (getMarchaAtual() + aumentar > getMarchaMaxima()){
-            System.out.println("Você ultrapassou o limite máximo da marcha");
+    public void aumentaMarcha() {
+        if(this.marchaAtual < numeroMaximoMarchas) {
+            this.marchaAtual++;
         }
         else {
-            setMarchaAtual(getMarchaAtual() + aumentar);
+            System.out.println("Marcha já está no maximo");
         }
     }
 
+    public void diminuiMarcha() {
+        if(this.marchaAtual > 1) {
+            this.marchaAtual--;
+        }
+        else {
+            System.out.println("Marcha já está no minimo");
+        }
+    }
 }
