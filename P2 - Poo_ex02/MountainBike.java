@@ -2,8 +2,8 @@ public class MountainBike extends Bike{
 
     private String tipoSuspensão;
 
-    public MountainBike(double velocidadeInicial, int marchaInicial, String tipoSuspensão, String veiculo, String identificação, String fabricante){
-        super(marchaInicial,velocidadeInicial, veiculo, identificação,fabricante);
+    public MountainBike(double velocidadeInicial, int marchaInicial, String tipoSuspensão, String identificação, String fabricante){
+        super(marchaInicial, velocidadeInicial, identificação, fabricante);
         this.setTipoSuspensão(tipoSuspensão);
     }
 
@@ -16,6 +16,6 @@ public class MountainBike extends Bike{
     }
     public void imprimirDados(){
         super.imprimirDados();
-        System.out.println("A" + "MountainBike possui" + "suspensão do tipo " + getTipoSuspensão() );
+        System.out.println("A" + "MountainBike possui" + "suspensão do tipo " + getTipoSuspensão());
     }
 }
